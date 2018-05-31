@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     student_id = -1;
     onSubmit(form: NgForm) {
         if (document.getElementById('submit').classList.contains('edit')) {
+            this.student_id =  document.getElementById('submit').getAttribute('row');
             this.studentService.updateStudent(this.student_id)
             .subscribe(
                 res => {
@@ -41,30 +42,7 @@ export class AppComponent implements OnInit {
         this.studentService.refreshInput(null);
         document.getElementById('submit').classList.remove('edit');
     }
-    editStudent(id) {
-        this.studentService.editStudent(id)
-            .subscribe(
-                (res: StudentInterface) => {
-                        this.studentService.refreshInput(res);
-                        document.getElementById('submit').classList.add('edit');
-                        this.student_id = id;
-                    },
-                    err => {
-                        console.log('Error occured');
-                    }
-                );
-    }
-    deleteStudent(id) {
-         this.studentService.deleteStudent(id)
-            .subscribe(
-                res => {
-                    location.reload();
-                },
-                err => {
-                    console.log('Error occured');
-                }
-            );
-    }
+
     ngOnInit(): void {
           this.studentService.getStudents().subscribe((data: StudentInterface) => {
           this.response = data;

@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-lg-2">
+        ID
+      </div>
+      <div class="col-lg-2">
+        Name
+      </div>
+      <div class="col-lg-2">
+        Email
+      </div>
+      <div class="col-lg-2">
+        Admission Date
+      </div>
+      <div class="col-lg-2">
+        Faculty
+      </div>
+      <div class="col-lg-2">
+        Major
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-2">
+        {{  student.id }}
+      </div>
+      <div class="col-lg-2">
+        {{  student.name }}
+      </div>
+      <div class="col-lg-2">
+        {{  student.email }}
+      </div>
+      <div class="col-lg-2">
+        {{  student.admission_date }}
+      </div>
+      <div class="col-lg-2">
+        {{  student.faculty }}
+      </div>
+      <div class="col-lg-2">
+        {{  student.major }}
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-success btn-xs btn-detail"  [attr.row]="student.id" (click)='editStudent(student.id)' data-toggle="modal" data-target="#myModal">Edit</button>
+    <button class="btn btn-danger btn-xs btn-delete" (click)='deleteStudent(student.id)'>Delete</button>
+  </div>
+</div>

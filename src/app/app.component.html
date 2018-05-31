@@ -3,38 +3,10 @@
     <br />
     <h2 style="text-align: center">Students Database</h2>
     <br />
+    <button id="btn-add" (click)='addStudent()' type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Add New Student</button>
     <br />
-    <table class="table table-bordered ">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Admission Date</th>
-            <th>Faculty</th>
-            <th>Major</th>
-            <th>
-                <button id="btn-add" (click)='addStudent()' type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Add New Student</button>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr *ngFor="let student of response;">
-            <td>{{  student.id }}</td>
-            <td>{{ student.name }}</td>
-            <td>{{ student.email }}</td>
-            <td>{{ student.admission_date }}</td>
-            <td>{{ student.faculty }}</td>
-            <td>{{ student.major }}</td>
-            <td>
-                <button class="btn btn-success btn-xs btn-detail" (click)='editStudent(student.id)' data-toggle="modal" data-target="#myModal">Edit</button>
-                <button class="btn btn-danger btn-xs btn-delete" (click)='deleteStudent(student.id)'>Delete</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
+    <br />
+    <app-student *ngFor="let student of response;" [student]="student"></app-student>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
