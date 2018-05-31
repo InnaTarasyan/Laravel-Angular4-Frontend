@@ -1,5 +1,9 @@
-# Ng4Laravel
-
+# Students Database
+ We can use both
+ Laravel PHP Web Application Framework and Angular Popular Front End Framework,
+so they can interact with each other via an API.
+We simply build one interface in Angular 4 Application and then call an API to store, retrieve, update and delete the data.
+ 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
 ## Development server
@@ -25,3 +29,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
