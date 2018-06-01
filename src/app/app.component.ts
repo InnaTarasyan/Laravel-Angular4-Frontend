@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     student_id = -1;
     onSubmit(form: NgForm) {
         if (document.getElementById('submit').classList.contains('edit')) {
-            this.student_id =  document.getElementById('submit').getAttribute('row');
+            this.student_id =  +document.getElementById('submit').getAttribute('row');
             this.studentService.updateStudent(this.student_id)
             .subscribe(
                 res => {
